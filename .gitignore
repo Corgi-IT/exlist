@@ -1,0 +1,9 @@
+# Basic
+node_modules/
+logs/
+*.log
+coverage/
+.idea
+tmp/
+bower_components/
+bower/
