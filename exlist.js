@@ -19,7 +19,7 @@ function paramFix(link, obj) {
 
     let result = null;
     while (result = link.match(/(:)\w+/g)) {
-        let found = result[0];
+        const found = result[0];
         link = link.replace(found, obj[found.substr(1)]);
     }
     return link;
@@ -37,7 +37,9 @@ function route(handle) {
 }
 
 function argsFixer(args, method) {
-    if (args.length > 0 && (args[0].constructor === String && args[0].indexOf('/') === 0) || (args[0].url && args[0].url.indexOf('/') === 0)) {
+    if (args.length > 0 &&
+        (args[0].constructor === String && args[0].indexOf('/') === 0) ||
+        (args[0].url && args[0].url.indexOf('/') === 0)) {
         let url = '';
         let rteObj = null;
         const arg0 = args[0];
@@ -60,21 +62,27 @@ function argsFixer(args, method) {
 module.exports = function (app) {
     application = app;
 
-    methods.forEach(function (element) {
+    methods.forEach((element) => {
         const tempfn = app[element];
 
         app[element] = function () {
-            arguments = argsFixer(arguments, element);
-            return tempfn.apply(this, arguments);
-        }
+            const args = argsFixer(arguments, element);
+            return tempfn.apply(this, args);
+        };
     });
 
     return function (req, res, next) {
         res.locals.getRoute = route;
-        res.exlist = res.locals.route = url;
+        res.exlist = function () {
+            return res.redirect(
+                url(...Object.keys(arguments).map((key) => arguments[key]))
+            );
+        };
+
+        res.exlist.route = res.locals.route = url;
 
         next();
-    }
+    };
 };
 
 module.exports.route = route;
@@ -88,7 +96,7 @@ module.exports.cliTable = function cliTable() {
         head: ['Route', 'Method', 'Handle', 'Arguments']
     });
 
-    routesList.forEach(function (element) {
+    routesList.forEach((element) => {
         const arr = [];
 
         arr.push(element.url);
