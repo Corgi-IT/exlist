@@ -1,37 +1,37 @@
 {
-    "name": "exlist",
-    "version": "0.5.0",
-    "description": "Indexes all Express routes declared, makes it possible to print it in a nice table (CLI) and makes it possible to generate urls in views",
-    "main": "exlist.js",
-    "scripts": {
-        "lint": "$(npm bin)/eslint ."
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Geexteam/exlist.git"
-    },
-    "keywords": [
-        "exlist",
-        "Express",
-        "Express list",
-        "Express lister",
-        "Express routes",
-        "Express view route generator",
-        "Express view route"
-    ],
-    "author": "Renzo <renzo@geex.company>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Geexteam/exlist/issues"
-    },
-    "homepage": "https://github.com/Geexteam/exlist#readme",
-    "dependencies": {
-        "cli-table2": "0.2.0",
-        "obj-denied": "1.1.1"
-    },
-    "devDependencies": {
-        "eslint": "^1.10.3",
-        "eslint-config-defaults": "^7.1.1",
-        "eslint-plugin-filenames": "^0.2.0"
-    }
+  "name": "exlist",
+  "version": "0.6.0",
+  "description": "Indexes all Express routes declared, makes it possible to print it in a nice table (CLI) and makes it possible to generate urls in views",
+  "main": "exlist.js",
+  "scripts": {
+    "lint": "$(npm bin)/eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geexteam/exlist.git"
+  },
+  "keywords": [
+    "exlist",
+    "Express",
+    "Express list",
+    "Express lister",
+    "Express routes",
+    "Express view route generator",
+    "Express view route"
+  ],
+  "author": "Renzo <renzo@geex.company>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Geexteam/exlist/issues"
+  },
+  "homepage": "https://github.com/Geexteam/exlist#readme",
+  "dependencies": {
+    "cli-table2": "0.2.0",
+    "obj-denied": "1.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-defaults": "^7.1.1",
+    "eslint-plugin-filenames": "^0.2.0"
+  }
 }
