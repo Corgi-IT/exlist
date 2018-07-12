@@ -1,6 +1,6 @@
 {
   "name": "exlist",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Indexes all Express routes declared, makes it possible to print it in a nice table (CLI) and makes it possible to generate urls in views",
   "main": "exlist.js",
   "scripts": {
